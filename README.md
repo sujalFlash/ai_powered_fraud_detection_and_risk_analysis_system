@@ -58,7 +58,7 @@ The project is organized as follows:
      ```python shell
         import sys
         import subprocess
-        AIRFLOW_VERSION="2.10.5" #recent version"
+        AIRFLOW_VERSION="2.10.5" #recent version
         PYTHON_VERSION=f"{sys.version_info.major}.{sys.version_info.minor}"
         CONSTRAINT_URL=f"https://raw.githubusercontent.com/apache/airflow/constraints-{AIRFLOW_VERSION}/constraints-{PYTHON_VERSION}.txt"
         print(f"airflow version:{AIRFLOW_VERSION}")

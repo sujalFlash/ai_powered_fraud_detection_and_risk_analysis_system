@@ -52,10 +52,24 @@ The project is organized as follows:
 
     ```bash
     python3 -m venv venv
-    source venv/bin/activate  # On Linux/macOS
     venv\Scripts\activate  # On Windows
     ```
-
+4.   ** Apache airflow installation"
+     ```python shell
+        import sys
+        import subprocess
+        AIRFLOW_VERSION="2.10.5" #recent version"
+        PYTHON_VERSION=f"{sys.version_info.major}.{sys.version_info.minor}"
+        CONSTRAINT_URL=f"https://raw.githubusercontent.com/apache/airflow/constraints-{AIRFLOW_VERSION}/constraints-{PYTHON_VERSION}.txt"
+        print(f"airflow version:{AIRFLOW_VERSION}")
+        print(f"python version:{PYTHON_VERSION}")
+        print(f"Constraint URL:{CONSTRAINT_URL}")
+        try:
+              subprocess.check_call(["pip","install",f"apache-airflow=={AIRFLOW_VERSION}","--constraint",CONSTRAINT_URL])
+              print("Airflow installed successfully")
+        except subprocess.CalledProcessError as e:
+              print(f"error install airflow:{e}")
+        
 4.  **Install dependencies:**
 
     ```bash
